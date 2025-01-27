@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for PDF Editing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #333;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .tool-link {
+            color: #28a745;
+            font-weight: bold;
+        }
+        /* Loading Animation */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007BFF;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h3>AI for PDF Editing</h3>
+
+    <h3>1. Adobe Acrobat (AI Features)</h3>
+    <p>AI-powered PDF editor with features like smart document scanning and text recognition. <a class="tool-link" href="https://www.adobe.com/acrobat.html" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>2. Smallpdf</h3>
+    <p>AI-driven PDF editor for compressing, converting, and editing PDFs. <a class="tool-link" href="https://smallpdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>3. PDFelement</h3>
+    <p>AI-powered PDF editor with OCR and document automation features. <a class="tool-link" href="https://pdf.wondershare.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>4. iLovePDF</h3>
+    <p>AI-enhanced PDF editor for merging, splitting, and compressing PDFs. <a class="tool-link" href="https://www.ilovepdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>5. Nitro PDF</h3>
+    <p>AI-powered PDF editor with advanced editing and collaboration tools. <a class="tool-link" href="https://www.gonitro.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>6. Soda PDF</h3>
+    <p>AI-driven PDF editor for creating, editing, and converting PDFs. <a class="tool-link" href="https://www.sodapdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>7. PDF Expert</h3>
+    <p>AI-powered PDF editor for annotating, editing, and signing PDFs. <a class="tool-link" href="https://pdfexpert.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>8. Foxit PDF Editor</h3>
+    <p>AI-enhanced PDF editor with OCR and document management features. <a class="tool-link" href="https://www.foxit.com/pdf-editor" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>9. PDFescape</h3>
+    <p>AI-powered online PDF editor for creating and editing PDFs. <a class="tool-link" href="https://www.pdfescape.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>10. Sejda</h3>
+    <p>AI-driven PDF editor for editing, merging, and compressing PDFs. <a class="tool-link" href="https://www.sejda.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <!-- Loading Animation -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+
+    <script>
+        // Function to show loading animation
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+
+        // Hide loading animation when the page is fully loaded
+        window.addEventListener('load', function () {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

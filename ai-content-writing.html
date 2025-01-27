@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Content Writing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .tool-link {
+            color: #28a745;
+            font-weight: bold;
+        }
+        /* Loading Animation */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007BFF;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h3>AI for Content Writing</h3>
+
+    <h3>1. ChatGPT (OpenAI)</h3>
+    <p>AI-powered chatbot for generating, editing, and optimizing written content. <a class="tool-link" href="https://openai.com/chatgpt" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>2. Jasper AI</h3>
+    <p>AI tool for generating marketing copy, blogs, and creative content. <a class="tool-link" href="https://www.jasper.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>3. Writesonic</h3>
+    <p>AI-powered tool for creating SEO-optimized content, ads, and product descriptions. <a class="tool-link" href="https://writesonic.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>4. Copy.ai</h3>
+    <p>AI tool for generating copy for social media, emails, and websites. <a class="tool-link" href="https://www.copy.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>5. Rytr</h3>
+    <p>AI-powered writing assistant for generating content in various formats. <a class="tool-link" href="https://rytr.me" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>6. Grammarly</h3>
+    <p>AI-based writing assistant for grammar, spelling, and style improvements. <a class="tool-link" href="https://www.grammarly.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>7. ProWritingAid</h3>
+    <p>AI-powered tool for improving writing style, grammar, and readability. <a class="tool-link" href="https://prowritingaid.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>8. Wordtune</h3>
+    <p>AI-powered tool for rewriting and improving sentences. <a class="tool-link" href="https://www.wordtune.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>9. Simplified</h3>
+    <p>AI-powered tool for generating content, graphics, and videos. <a class="tool-link" href="https://simplified.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>10. Anyword</h3>
+    <p>AI tool for generating high-converting ad copy and content. <a class="tool-link" href="https://www.anyword.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <!-- Loading Animation -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+
+    <script>
+        // Function to show loading animation
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+
+        // Hide loading animation when the page is fully loaded
+        window.addEventListener('load', function () {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

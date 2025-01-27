@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Research</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .tool-link {
+            color: #28a745;
+            font-weight: bold;
+        }
+        /* Loading Animation */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-spinner {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #007BFF;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h3>AI for Research</h3>
+
+    <h3>1. Google Scholar</h3>
+    <p>AI-powered tool for academic research and paper recommendations. <a class="tool-link" href="https://scholar.google.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>2. ResearchRabbit</h3>
+    <p>AI tool for discovering and organizing research papers. <a class="tool-link" href="https://www.researchrabbit.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>3. Perplexity AI</h3>
+    <p>AI-powered search engine for accurate and concise answers. <a class="tool-link" href="https://www.perplexity.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>4. Elicit</h3>
+    <p>AI tool for automating literature reviews and research tasks. <a class="tool-link" href="https://elicit.org" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>5. Semantic Scholar</h3>
+    <p>AI-powered research tool for discovering scientific literature. <a class="tool-link" href="https://www.semanticscholar.org" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>6. IBM Watson Discovery</h3>
+    <p>AI-powered tool for analyzing and extracting insights from research documents. <a class="tool-link" href="https://www.ibm.com/cloud/watson-discovery" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>7. Zotero</h3>
+    <p>AI-enhanced tool for managing and citing research sources. <a class="tool-link" href="https://www.zotero.org" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>8. Mendeley</h3>
+    <p>AI-powered reference manager and academic social network. <a class="tool-link" href="https://www.mendeley.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>9. Scite</h3>
+    <p>AI tool for analyzing citations and verifying research claims. <a class="tool-link" href="https://scite.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <h3>10. Connected Papers</h3>
+    <p>AI-powered tool for visualizing research paper connections. <a class="tool-link" href="https://www.connectedpapers.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+
+    <!-- Loading Animation -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Main Page</a>
+
+    <script>
+        // Function to show loading animation
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+
+        // Hide loading animation when the page is fully loaded
+        window.addEventListener('load', function () {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
