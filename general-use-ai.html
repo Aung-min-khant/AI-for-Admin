@@ -4,38 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>General Use AI Tools</title>
+    <link rel="stylesheet" href="style1.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h3 {
-            color: #333;
-        }
-        h3 {
-            color: #555;
-            margin-top: 20px;
-        }
-        p {
-            color: #666;
-        }
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .back-link {
-            display: block;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .tool-link {
-            color: #28a745;
-            font-weight: bold;
-        }
+        
         /* Loading Animation */
         .loading-overlay {
             display: none;
@@ -64,38 +35,50 @@
     </style>
 </head>
 <body>
-    <h3>Most Popular General Use AI Tools</h3>
-
-    <h3>1. ChatGPT (OpenAI)</h3>
-    <p>AI-powered chatbot for writing, brainstorming, and answering questions. <a class="tool-link" href="https://openai.com/chatgpt" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>2. Gemini (Google)</h3>
-    <p>Google's advanced AI model for multimodal tasks and problem-solving. <a class="tool-link" href="https://gemini.google.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>3. DeepSeek</h3>
-    <p>AI platform for deep learning and data analysis. <a class="tool-link" href="https://deepseek.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>4. Microsoft Copilot</h3>
-    <p>AI assistant for coding, data analysis, and productivity. <a class="tool-link" href="https://copilot.microsoft.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>5. Grammarly</h3>
-    <p>AI-based writing assistant for grammar, spelling, and style improvements. <a class="tool-link" href="https://www.grammarly.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>6. Google Assistant</h3>
-    <p>AI-powered virtual assistant for managing tasks, reminders, and queries. <a class="tool-link" href="https://assistant.google.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>7. Notion AI</h3>
-    <p>AI-powered tool for note-taking, task management, and organization. <a class="tool-link" href="https://www.notion.so/product/ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>8. Canva AI</h3>
-    <p>AI tools for graphic design, image editing, and template creation. <a class="tool-link" href="https://www.canva.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>9. Jasper AI</h3>
-    <p>AI tool for generating marketing copy, blogs, and creative content. <a class="tool-link" href="https://www.jasper.ai/" target="_blank" onclick="showLoading()">Visit Website</a></p>
-    <hr>
-    <h3>10. Otter.ai</h3>
-    <p>AI-powered transcription and note-taking tool. <a class="tool-link" href="https://otter.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
-
+    <div class="master_heading">Most Popular General Use AI Tools</div>
+    <ul class="list_master">
+        <li>
+            1. ChatGPT (OpenAI)
+            <p>AI-powered chatbot for writing, brainstorming, and answering questions. <a class="tool-link" href="https://openai.com/chatgpt" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            2. Gemini (Google)
+            <p>Google's advanced AI model for multimodal tasks and problem-solving. <a class="tool-link" href="https://gemini.google.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li> 
+            3. DeepSeek
+            <p>AI platform for deep learning and data analysis. <a class="tool-link" href="https://deepseek.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            4. Microsoft Copilot
+            <p>AI assistant for coding, data analysis, and productivity. <a class="tool-link" href="https://copilot.microsoft.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            5. Grammarly
+            <p>AI-based writing assistant for grammar, spelling, and style improvements. <a class="tool-link" href="https://www.grammarly.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+   
+        </li>
+        <li>
+            6. Google Assistant
+             <p>AI-powered virtual assistant for managing tasks, reminders, and queries. <a class="tool-link" href="https://assistant.google.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            7. Notion AI
+            <p>AI-powered tool for note-taking, task management, and organization. <a class="tool-link" href="https://www.notion.so/product/ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            8. Canva AI
+            <p>AI tools for graphic design, image editing, and template creation. <a class="tool-link" href="https://www.canva.com" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            9. Jasper AI
+            <p>AI tool for generating marketing copy, blogs, and creative content. <a class="tool-link" href="https://www.jasper.ai/" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+        <li>
+            10. Otter.ai
+            <p>AI-powered transcription and note-taking tool. <a class="tool-link" href="https://otter.ai" target="_blank" onclick="showLoading()">Visit Website</a></p>
+        </li>
+    </ul>
     <!-- Loading Animation -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
@@ -114,5 +97,6 @@
             document.getElementById('loadingOverlay').style.display = 'none';
         });
     </script>
+    
 </body>
 </html>
