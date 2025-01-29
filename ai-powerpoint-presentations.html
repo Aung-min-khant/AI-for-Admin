@@ -5,33 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for PowerPoint Presentations</title>
     <link rel="stylesheet" href="style2.css">
-    <style>
-        /* Loading Animation */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007BFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    
 </head>
 <body>
     
@@ -68,25 +42,12 @@
         <li>8. Visme
         <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAbFBMVEUrMUAoLj4fJjcdJDYkKjsRGi9ESVUlLDwGEyo1O0h3e4KZnaKoq69wdHwADSeAhIvo6+z5/PxaX2jc3+H////8//87QE2wtLf2+fkWHjJNUl26vsHS1dfIzM5obHTx9PWUl5zg5OUAESmLj5WStFHHAAAA00lEQVR4AdWOBRKEMAxFK2jRlARSXO5/xnWXA/BmMpZvYq/I8ymtve+X8oMwjGKTpNnnV+ZFCdpWiITm46nqCoEajcxMzn9L9loAZsa6A4Y+GNLRyUemns4/hiFApjlBQgjuX5cSX8CggvPREjyCoxLOPsSpMcQxYuqy6FFJzARdpnKncmH7bCbs9e3pA2MT+p50qxIyXO00bU7cnz2aVQqhu2nLw1OS1FrcCe3sn3d1SG1pQ/FOqC67FpgANyV+oWck4liKn/imS+tQ/EE5LcVuOQL/IQ6UWVYLsQAAAABJRU5ErkJggg==" alt="AI-powered tool for creating presentations, infographics, and more."> <a class="tool-link" href="https://www.visme.co" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
     </ul>
-    <!-- Loading Animation -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
     <br/>
-    
-
     <a href="index.html" class="back-link" style="margin-top: 10px;">← Back to Main Page</a>
-
-    <script>
-        // Function to show loading animation
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
-
-        // Hide loading animation when the page is fully loaded
-        window.addEventListener('load', function () {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    </script>
+    <div class="copy_right">
+        Constructed based on Dr.Nay Win Aung's advice
+        <br>
+        Created by <i style="font-weight: bolder;">"Aung Min Khant"</i>
+    </div>
 </body>
 </html>

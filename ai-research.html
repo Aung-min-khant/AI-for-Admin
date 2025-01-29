@@ -5,34 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for Research</title>
     <link rel="stylesheet" href="style2.css">
-    <style>
-       
-        /* Loading Animation */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007BFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    
 </head>
 <body>
     <div class="master_heading">
@@ -70,24 +43,13 @@
     <li>10. Connected Papers
     <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAXVBMVEVHcEyYystwtrdutbZrs7TG5+f///+Pxsd8u7xytrd3ubpcq6yMxMVIoKKCvr+PxcZttLWCv8Bfra5HoaJgra6JwsNBn6E6m51Xqqs0mZovlphvtbZ2ubopk5VpsrM+6f64AAAAFnRSTlMAHdOrwA8EKv5Qe6A8uZ1w7Y/j6/XTYyulbgAAAL9JREFUKJGV0tkSgyAMBVDcWMS1tiyi/P9n1hBnamt46H2RmWNCYGDsj4h5GHM2yk1K2dB12xEpXyTOISQmS6sQEncUtjEkpgcKEXigUcQjGWPtKLoyY3yCHxSNFYxZ1PSO2JHuWxbpU091cTNVYW/nXPxpKdgDVw5yvSNtjHHnIE9A8bHFGgiWqsMuA2trUTXu8HVS461FJ463eu9RBYGgie/I/Xoy0Zb1+46sCeR2T7xwAlnTg/akAStFv9Zs3jn4D4vtHUmAAAAAAElFTkSuQmCC" alt="AI-powered tool for visualizing research paper connections."> <a class="tool-link" href="https://www.connectedpapers.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
     </ul>
-    <!-- Loading Animation -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
-    <br/>
-
+    <br>
     <a href="index.html" class="back-link">← Back to Main Page</a>
-
-    <script>
-        // Function to show loading animation
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
-
-        // Hide loading animation when the page is fully loaded
-        window.addEventListener('load', function () {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    </script>
+    <div class="copy_right">
+        Constructed based on Dr.Nay Win Aung's advice
+        <br>
+        Created by <i style="font-weight: bolder;">"Aung Min Khant"</i>
+    </div>
+   
 </body>
 </html>

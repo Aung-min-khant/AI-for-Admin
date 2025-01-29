@@ -4,85 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for PDF Editing</title>
-    <link rel="stylesheet" href="style1.css">
-    <style>
-        /* Loading Animation */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007BFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
+
 </head>
 <body>
-    <div class="master_heading">AI for PDF Editing</div>
-    <ol class="list_master">
+    <div class="master_heading">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA6lBMVEVHcEzvsw3mrA/ssQzQnhXotQ3VmiEAAALytAqUiDDvsgzssA3cuRnqqA/orhDytAzkqg7WnwzvchM0LiISw+wHxPTCTWDSOEXq9x3/+QAApsoIvvR1t48AsdoAwe/3twj+/gD/vgf6ugh+Xw/Ajg3prQq6ig3TnAumfA3r8gqyhA2IZg/3+AnJlQzb7wte7Qxy6A/I7gyY6w6edQ1+5BDQzwrJvwtiSg6Pag9I8QuUbw4o9Qi47A3cowwAx/7n9TWunhDAsQ2i4ZGfjRCo4xBCzdpz17bO7ViVhA7B6W2tYH382gkXxeyAirR1uFCtAAAAH3RSTlMA7YKxSpRiAv0j3813p73U9ePLDezR9vbd21zFrVCCnMcR8wAAAi5JREFUKJFNk4du2zAQhmlbcijbaYAEQbq5KWrvYdmWV5zV9v1fpyc3SUOAOOE+/sdxv9DF60DoxlrY9njqIPSee0PTGefMFczfjMZv+F9A1ogrv+uM6RrJOJ6i/xDZzDWtcIsigFlowj+dxef5iRitFWNKuYzJxjcunw10gDY3fsGIbMXTkwj0hjUuJ/MzRBYhCnNX7D1KQxrWgVacEDJGA8TwxfwnL4/p4+ng5eGuGCCBO6EFRC6PWZrR574/UC/N9oZBcgJwBFG18fKeeqc/py2l62V2hE0JvkDOIDRVmVJ66u/6HjYuyywYpFM0HcoH8Sqjh/7n3Y9vvx9pvFrvXMjayAZhtE/LjG6/3770ziOlcZrUGurO0YRzLus8gXL0dvr1C4QwTSsf4AxNdMFkncI9KHVeHg4QvLQEyOGVLiMxKOGwNPx8vXgAeJ+UlWZdcIXG2rjquM6Xg/TSfthSL8nzvWSNnCALC58FXpomIL3ebg80KZNQEHcjoa+kECzaZckKjkS87XO4Su5rn/kNhvebREKytorz0It/UVixzjxBcBeN4Pkc7guMRRWXy2S5XK2SPA42TAg1hZaiS6U7httdCJq1F4Z7oZgx0WxoGfQsEoKwSBzrqqp3QnO2ER107AwdLjtYzTZSawlGUVq52Hq1CXTGFYFUnA1DSd0UxELv7ruZk4ibJjKybYPGVyMHffDtYFxtcCACP8J4gdBHxwN2xnMwBb6yrff/4S/L+WAXFaXHggAAAABJRU5ErkJggg==" alt="DOMS">
+        AI for PDF Editing
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA6lBMVEVHcEzvsw3mrA/ssQzQnhXotQ3VmiEAAALytAqUiDDvsgzssA3cuRnqqA/orhDytAzkqg7WnwzvchM0LiISw+wHxPTCTWDSOEXq9x3/+QAApsoIvvR1t48AsdoAwe/3twj+/gD/vgf6ugh+Xw/Ajg3prQq6ig3TnAumfA3r8gqyhA2IZg/3+AnJlQzb7wte7Qxy6A/I7gyY6w6edQ1+5BDQzwrJvwtiSg6Pag9I8QuUbw4o9Qi47A3cowwAx/7n9TWunhDAsQ2i4ZGfjRCo4xBCzdpz17bO7ViVhA7B6W2tYH382gkXxeyAirR1uFCtAAAAH3RSTlMA7YKxSpRiAv0j3813p73U9ePLDezR9vbd21zFrVCCnMcR8wAAAi5JREFUKJFNk4du2zAQhmlbcijbaYAEQbq5KWrvYdmWV5zV9v1fpyc3SUOAOOE+/sdxv9DF60DoxlrY9njqIPSee0PTGefMFczfjMZv+F9A1ogrv+uM6RrJOJ6i/xDZzDWtcIsigFlowj+dxef5iRitFWNKuYzJxjcunw10gDY3fsGIbMXTkwj0hjUuJ/MzRBYhCnNX7D1KQxrWgVacEDJGA8TwxfwnL4/p4+ng5eGuGCCBO6EFRC6PWZrR574/UC/N9oZBcgJwBFG18fKeeqc/py2l62V2hE0JvkDOIDRVmVJ66u/6HjYuyywYpFM0HcoH8Sqjh/7n3Y9vvx9pvFrvXMjayAZhtE/LjG6/3770ziOlcZrUGurO0YRzLus8gXL0dvr1C4QwTSsf4AxNdMFkncI9KHVeHg4QvLQEyOGVLiMxKOGwNPx8vXgAeJ+UlWZdcIXG2rjquM6Xg/TSfthSL8nzvWSNnCALC58FXpomIL3ebg80KZNQEHcjoa+kECzaZckKjkS87XO4Su5rn/kNhvebREKytorz0It/UVixzjxBcBeN4Pkc7guMRRWXy2S5XK2SPA42TAg1hZaiS6U7httdCJq1F4Z7oZgx0WxoGfQsEoKwSBzrqqp3QnO2ER107AwdLjtYzTZSawlGUVq52Hq1CXTGFYFUnA1DSd0UxELv7ruZk4ibJjKybYPGVyMHffDtYFxtcCACP8J4gdBHxwN2xnMwBb6yrff/4S/L+WAXFaXHggAAAABJRU5ErkJggg==" alt="DOMS">
+    </div>
+    <ul class="list_master">
         <li>1. Adobe Acrobat (AI Features)
-        <p>AI-powered PDF editor with features like smart document scanning and text recognition. <a class="tool-link" href="https://www.adobe.com/acrobat.html" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAY1BMVEX////+9fX+9/b96+vpAAD4xsXyjYrqEADqAADuVlL2s7HyhoPsNS/61tb2rq3wbGjrIxzrLyn1pqTzmJb60tHvZmP3vLv4wcDzk5HtRkL73t3xeXb97ezsQTzuWlb62djqGQ+7TL0FAAAAwElEQVR4AbWQVQLDMAxDF06GZab7n3KxyvBblWy9gNLH/WLci10zISF1CbU0XtZdQmkgKS7Yc4avC/i2ZqJn9pFmht8T/NHEd0CRwiNjNFFGMT7JAY4uE/Sx6QHayXQWg3Ysm5fLURQ7WFpvBfMSxm5ZNcahskCZbWANh1PZIFK7Mg5Wj02HSNUCI8Bv//l4T00jZw2GJEm+GxsOgrGzZD7/jwgIB59l0ymSGeZzbMV8JBQZoPj0qz4eNmRQtpv0B4L4C2q5kuOCAAAAAElFTkSuQmCC" alt="AI-powered PDF editor with features like smart document scanning and text recognition. "><a class="tool-link" href="https://www.adobe.com/acrobat.html" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>2. Smallpdf
-        <p>AI-driven PDF editor for compressing, converting, and editing PDFs. <a class="tool-link" href="https://smallpdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAvElEQVR4AaTRxUHAMABA0R/D3V3vyAD4CNgwDMEKjMAMcOTIAIyAS71YDJfXxj0R1RZeAovQZYslDMMCFDiSUCPfigckfOIfK+ho1txu/XN6b/cEp9T0H9J0itXdks623hAQHFWEWg8wx2B4ttyQbHRcxGcoif53tKjiAb+k3w6RJSp1L5Wo7EGm0YCNM0L9zTPNWmCNmnyx9YGA2F8pCcwnoqfA6RZMKEI6byaU6jItK1+UoOqR7mn6agAAVFox7ocMzHcAAAAASUVORK5CYII=" alt="AI-driven PDF editor for compressing, converting, and editing PDFs."> <a class="tool-link" href="https://smallpdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>3. PDFelement
-        <p>AI-powered PDF editor with OCR and document automation features. <a class="tool-link" href="https://pdf.wondershare.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAALVBMVEUnLmNHcEwnLWIpLmcnLmL///+1tsURG1kADVUjKVvNztjs7fGTlqtwdJIAAFKciFkXAAAABHRSTlMzAAICjTUyewAAAHZJREFUKJHN0t0OwBAMgNH6maqx93/cqS0iSu+W7HN5IqGAUQJjLCyzjNZvshVhh/A5YuzhjBiOXsAfIJXQSnVlmnfmxJWItc1VruUQXowzkoqkoGfFfHISH20zX70KkZf10650mJDU4bGlMjq/Uf6aximfWukG2KMLaolVjKAAAAAASUVORK5CYII=" alt="AI-powered PDF editor with OCR and document automation features."> <a class="tool-link" href="https://pdf.wondershare.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>4. iLovePDF
-        <p>AI-enhanced PDF editor for merging, splitting, and compressing PDFs. <a class="tool-link" href="https://www.ilovepdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAilBMVEX////99PP3z8/75uUTExMfHx8AAACdnZ3zsbDiDwDiGhLsgoDqcm/yqKaQkJBBQEDS0tL6397kMy7jJR/nSUX67Ozxo6HkLijkODT7+/vqamfnT0v+/v7iFQrtiIb1vr2pqanf39/W1tb19fVnZ2czMzNNTU3s6+sqKiq7u7vFxcVeXV21s7N4eHjsPrpxAAAA7klEQVR4Ab2PA4IEQRAEc1XrHdv2/7931YOzFYNCNPEfrNYbvGC729EeOBxPxzMu16fyRiTJUI6qqmq6aphPLdENuGoqY9nYPLHOKA8nVWADxvWFXGnWaF3X9ZznEoo1LXxSN3gh4Z8DlkHovzwQw7dRgwhPHbNf7DOHmJExYeLTJCmTLXFppNNKEglyFGMsK9Q0stxDTogajm3V0Q4ZJ05My1kTnrbnmAoh+9xImmaRTTv1ZFH0/A1FjlkydQ9nlg1/5fZByvPeKSpeUizb9pPjup1jk0rUIZkbgoKmqTtitjdgOzcEPjPHhwR/yB1nwRX2GvDnsQAAAABJRU5ErkJggg==" alt=" PDF editor for merging, splitting, and compressing PDFs."> <a class="tool-link" href="https://www.ilovepdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>5. Nitro PDF
-        <p>AI-powered PDF editor with advanced editing and collaboration tools. <a class="tool-link" href="https://www.gonitro.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAM1BMVEVHcEz1SBH1SBH1SBH1SBH1SBH1SBH1SBH1RxH1SBH1SBH1SBH1SBH1SBH1SBH1SBH1SBGhU+MqAAAAEXRSTlMAcv/BJrOM9RNiO9hSo33oyryAgVMAAACpSURBVHgBddFVAsQgEAPQNLhz/8uuD5XZvh9cAjjZaDaLG45vNxM8f0KEkigMlExRcFaBSNFwYtgAin4ZIz2GDNbrGJmcDNprQDNZZFDdssCsnOplCLTf4MQu8CMi6iSSIK/ahsXyKwFDJam/QQ9MlaTv0Zu6bKNISfZfiqQznOq/KFDUGCgshjzAKYkkCAYnVf8idBI2KJliQqsrC/7KfpAk7sTaNpw8AQ5+BUcSC12IAAAAAElFTkSuQmCC" alt="AI-powered PDF editor with advanced editing and collaboration tools."> <a class="tool-link" href="https://www.gonitro.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>6. Soda PDF
-        <p>AI-driven PDF editor for creating, editing, and converting PDFs. <a class="tool-link" href="https://www.sodapdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAclBMVEXuNEPuKzztITTtGi/tGS7tHTHtIzXuMkHtFSzzfYT5xsn84+X96uz72tz4t7vycHj84eL////uOkj72NrydHz0kZfuMD/wVWD2qK3tCibtKDn0iI7yeID+9/fvR1P3sbXxZ3D6zdDtJTf2pKn5wcT0j5Wvq9OIAAAAtElEQVR4Ac2QxQGAMBAEucOdxd3pv0T8lVAA84lMcqb8GWJV0w36UqZlO67nB6Flyo4iPPixZK0ECNIwi4AwF1xeAGVFVFdZLGWl5vxR3zs5JbVAFFsG5V+1cgfADZreqmWb9x5uusz6sFU4JB1OAlZkyFCtojyt3Kj5/g+AlsRvMd+az69jLrgQE+nzrCsdwEJYjgA4y7ICaGoxoxrgpdE/phBn65Ss23z/k3TNus61qfyXA13gDC1OW282AAAAAElFTkSuQmCC" alt="AI-driven PDF editor for creating, editing, and converting PDFs."> <a class="tool-link" href="https://www.sodapdf.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>7. PDF Expert
-        <p>AI-powered PDF editor for annotating, editing, and signing PDFs. <a class="tool-link" href="https://pdfexpert.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAGD0lEQVRYhY2XW2wcVx3Gf2d2Zi9Jdu04suNLRDCV2opauFwMjqxWaUARSiTakkqgIgUEFCJRpILoYyV44qn0oVKpEBeBKkIE5qmIhFRUlFQNSktikigy+JImbcM6cRIce732zvw/Hma9O3tJNkc70tmZM+f7zvf//v9zxtHUlvfuPwgcAEZk1iezHDJPZtQubfRV+0/b5yaZlSRbkNk5mU3unJ/7TRLPJYBHgVNAAIBqk6sZvA6mJFgDeIKQaxpTkTQ2fPnSFICXAD9TBRcgSRLxr/lS7Xbcv/0YoepUqg8OkM7MDQ6N1ghUV04VvP1E8WRVetUxtIA1EqKJFBvDBdIpAH/54+MHWS0HOITnQSqFnGt6uU6vkUx7sCQZNbxfGyNJwcz27Qf94JnvPKFKBdbW0OJ1bGYWe+c0SqUgk0aZdEyoDZiarnahaCCdHBc/OOAkzQHDzdkQzc5ROfkP1l75rWxmFroKKAg6uT7xX3UzNj03i7AwdJ7nzTlJy8DmZgLJFk5PU3rpZa0fmcQN9qOUd3vXJ8BbyUVElQqbt3TRXdjqskFmxUmKEma8Ywtn51j6/g8UnZmCbT1tVl4Hbl55FFZIp7P0bet3ge9jUYTMzJWff8G0vIIbHCA1/hnnjzzQkcjK4cMsP/kNMXIvODrWhCis0LO1z3Vv6cKisB5GSW55YrfF2SV0axn30fvY9NKLzuvpuSOJyvw8i3v2irSP/KBtKCyKQKK/d8il/QCzqKZMtdDJc/ffh/fwBKTTEATYex9wa+IR2dVrdyQQDA/Td37K0d2NVkutKWiG53ns6N/pgpSPRWEdPBEmJ8moluT1v77O6tPfE90FKBToOvqquyMLQGHIfycekhWLkE7XXO45j8HeIceGMoo9UichJFOD+dJ7HmHTL152unETm7/I2t9PdPSD8336//a6A1ClgqQq+GANfCMzmsDBrNX9wa5xvI+NQDbL+l+OqxWyDYlslu1vvens4hyyiP5tAy6xmTVkBE332qafv2c3ikKiCxfuBj9+Z2CA7uPHXa/SzqtlRitgso8ZfrvJFFVd6jpaoKHl10OUySKLYsnVKnlcijsoUPnzUXAeqQc614Qa6YsXsSe/hfKb6+BtFKApJC0KrB1/DZv+D1pbI/P5vXcnwdIStvdR+MhQMserJNooUSWB1KhAefKPrHzzkMhvxhsdITM+3hm8VCL67D7YlEWOeo43pJ+11ICNsu2W9n3B2N5LdPJt5HvI91G5zNaTJ5xXKNwZ/PoNos/thyhEfqohxrImJZoUqCojz4oLRKf/hQIfXb9J6sFRek691RFcZ88RPbgrNlyqCl5aRQtX0dItWCmhK0W4cROtrcHlK+jS+y0K+emnvo4tL+MN9Ltg1zj+cMvRoKXZT3+Gnv0RuvdDQHVVpRLuwKOk9u/DTpxAxQX8Lz5OdPYs9uqf8H/1c8hmWBt/GD68o0bCz337KXGX27HOTGHPPAvvXUH376xLboZWV/E++Qm0uIj/3aeJjh7DFhfxv/wlKuUyrq+X9ed/Ar1bkwrIA1Y7Ar/9DvaVr2H7noD/LaGufGt6RdX+4iIKQ+Q5ND2NLl/G5XKQzUIuh6IoadBVH1ig+UhWqcD5C+jEm+iXr8Rx7M7DUF9jjitRYCxClQqpxx8jPPw7XD6fOEALslnc9j5YX0e57IYRF3xeePEcYThMuQwL19DZ8zDzbpxW2XR8MO3tSZgn6Ww1KOFyOcIjRwgPHSKYnMT79BjePfcQHTuGzc9Tee45GNqRXMC51A8vXUszM/cY/55FH1wBi6A7j7IZ8FPxibrxENFeAQS5LJqbQ+++D5tyuIEBwt//geiNN1C5jP3zdLxlV+cCfhxvow/tXZdZkMzXtiDNOZ68bxYfTACCAK2soKvXIZ+DbAaVSpDPJ8ErhWIx7QHIbKxeu+tnu0YQa61yzUbMpOOjuwyyGdjRD4U88n3Ib0mCA4xB4uM0Gt89iuyUTK1KtK9irQo0hallT4gDWgHGCsXiVAOBjRZ+auKrkh3AbERSH/HnubsdyO2226qCQrYqswXgHDBZKBZ/ncT7P/B7kd9wQGyJAAAAAElFTkSuQmCC" alt="AI-powered PDF editor for annotating, editing, and signing PDFs."> <a class="tool-link" href="https://pdfexpert.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>8. Foxit PDF Editor
-        <p>AI-enhanced PDF editor with OCR and document management features. <a class="tool-link" href="https://www.foxit.com/pdf-editor" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAOVBMVEVHcEz/XwD/XwD/XwD/XwD/VQD/TQD/xK///Pn/8Oj/4dX/ayL/qYv/////jmL/mXP/ekH/ZBT/XwBWNnKFAAAAE3RSTlMAfOb/9f////////////////+jCeeapwAAAK1JREFUeAGl0kcWwyAMRVEcokb4bvtfbEDp8kl/02vTUxp2Txqa5acNaf8c9ym/6G8kblE+R3SPJGpmhRz4UAvdYT5AFRgbTGKAPCALYDPXBlAUelwQQXhSaAvCcbUzC9RtmsaIXNy6IiJVtyfD3swoHoLgapsTYjuTVt7gjC4oladKAftymixUDZojCsrMRIq+WApYfPk0ojffo3P2Fi9g6H98+TTX57imp9rsCFbrDn43jTfDAAAAAElFTkSuQmCC" alt="AI-enhanced PDF editor with OCR and document management features."> <a class="tool-link" href="https://www.foxit.com/pdf-editor" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>9. PDFescape
-        <p>AI-powered online PDF editor for creating and editing PDFs. <a class="tool-link" href="https://www.pdfescape.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEiUlEQVR4AWKgJqgSEWa6p66S81BdxXSPojxbq7gosxcvNyMDvQCg9nIKd6QJwvATZ207XNu6/G3bXNu2bdv3a9s2ouPk2DNJZb90ej2ZPdHFO6ipdH2pqpnuhgAVBKRBgGC3mpJxveORxfTvHbPBurt+HfXgqpWV3UuXip+gMdWqqm1Wk8fZ2EwcL8QEKIb9wWOraeVDi/H7q6ZGtdbXqaX6r3JF5VsHXQfHbfXq6IBejh316mjPGBpo7VyANEyQCIog6CIy9KFscJ1CobhpNnwK53xQKAcCZ4OyjqAAHyAZfEAAw2UF6CHgltnwOVftQwARCLYXFD+7hj33JQFUArxghKyAUhBw22z4LFBDDH7vlKFBk611a1u3SAC7+XToEvgl7oMCrFqtIhTNdVrlfYuxJQTMxsBDZ9Wsrm6p0ylbSAC7Yn7N6hp7uBl4YDF+A/6RAl37L9L7nwPYwRPc47WS9IX9z8cWk95eoh5giEwADtfZTROr19mssQi8zqa4bmIJELznNv4jds3tIvdFd5vzQDkQXgZwuIkBKOWHbylzwXxGWq9//c4WTSn5808oa8E8yly4wO8e2I9crZoTglLKTz/4s+AXwDNiGEFEYMACUB6E1wNMAAbNmDmVBNtjytm4lsQEJ6WPHIrBh5DoTqOczRvw7Anl7tlBrtYtKHP+HNzb4LueMqZOZAIcEADKg/AzAAG+jNnTqfDcaUro1J4FzN29gzyjh5PgtJGrfRv86+/Im51JyZ98SFmL5lPhmTPkateanM2bBAT4XhMQTg/wDEBA8a3r5P7/byq6cZ0yZ88gz6hhJDiesNS7WrckMSmB3IP6Q8ACKn70kDLnzqLUv34jlDDqDDABYmoq/tkpyl65zO/q0JaVgAvwI/WsNO4hAylr8QK/YLdR9vq15O7fhwlwWs0FoDyIsAd4CVxtWxHuWWo9wwcHS4BUJ3/5KUqQRSlff05ZC+dR4alTLCu8AckBAaA8iLAH0IQFp44Tuj/ogIE9wwaRmJbC3oSi2zcp/+A+FjTQhAXHX/gC32sCwusBBGO1zJw5hSCGObBX87uvKHfbZsrZvoUypk0mlIVlJu2/vyhj+tRnvtFlAF+ua2gcwYGPDmBn2ETYREdTq4AgIoKKEMmeMzt8OAJ8g/5WUx4oC8LrgWON6vcE74MPXuekocEHjzFnY9CP7OC6yfDBCdikfGF/F8914c4FbM4PRTmlUnnXYuwEAdsxJ8wZgSVX6RC+L62IwuuBEq4Hih+jVEOqVlbJ+Y+sWkX9JJwMhCFAgIDr4QuQ74H4CYhDBoqfQMBwBJDzj2MPsFftFjq9NJZfuk0SwK45xZZk8cmACLwYPB/k2SSAPQOE/x0owbL8MwQoem0VLLkqdsR6Vcw3JuWw8WgKmsmBjUkTtjGR7gEfh29MmGg3+urHeG/NMEkFgwYyhIBHsHgdh71i9z316+qHYTMbUwEjg5tTNw9YhOtLj/AFvW82frivYf2KE6pXVX1QtoyymkoVnw0qFzAPAn64YGxUZ1GtGurvy5dTNtRoQgZ8CoNq4UjitLhZAAAAAElFTkSuQmCC" alt="AI-powered online PDF editor for creating and editing PDFs."></p> <a class="tool-link" href="https://www.pdfescape.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>10. Sejda
-        <p>AI-driven PDF editor for editing, merging, and compressing PDFs. <a class="tool-link" href="https://www.sejda.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
-     </ol>
-    <!-- Loading Animation -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAATlBMVEVHcEwAu4gAu4gAu4gAu4gAu4gAu4gAu4gAu4gAu4gAu4gAu4gAu4j///8AuoUAt4BOyKDJ7eGw5dKC1rnf9e1qz62a3cUrwZPr+fQTvo3FRIXzAAAADHRSTlMAv+WnVkZrMw8jkPT7NWjOAAABEklEQVQokW2S2ZLFIAhEzWqSMaBm//8fHQQ0S91+SnkCdFMYc2ts+7615ods5VRV90FjQUn1+GSt+6i/WS8vgCQA/p7edQBbDCHuHuFROzDDbVadC1OZy15gmYsCsis2Kk3pcd2OY4vz7GVsStQw8wQd0GBE6Up5Cf4xTBMveYWcJ9uBI7U9chDRaKx8YEhWVgqCBbamy5+reo1Xru5viFtQrG6p0pYugOD3M1F96NRQ4ZiWoWFoR7U85xxIs3fUKGbSKAvnAKTGO//Y5L1DTAs/AHwojvhgmhIzh8G8PZIEOd/MDXpb4sTHsK5hv1BDvk8B+Uzydu67dB+9r7N5omr4XO4wyTZcPY3mhwbbdfZZ9A9ASB3Tm6y4vAAAAABJRU5ErkJggg==" alt="AI-driven PDF editor for editing, merging, and compressing PDFs."> <a class="tool-link" href="https://www.sejda.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+     </ul>
+    
     <br/>
     <a href="index.html" class="back-link">← Back to Main Page</a>
-
-    <script>
-        // Function to show loading animation
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
-
-        // Hide loading animation when the page is fully loaded
-        window.addEventListener('load', function () {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    </script>
+    <div class="copy_right">
+        Constructed based on Dr.Nay Win Aung's advice
+        <br>
+        Created by <i style="font-weight: bolder;">"Aung Min Khant"</i>
+    </div>
+    
 </body>
 </html>

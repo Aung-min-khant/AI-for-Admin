@@ -4,86 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for Content Writing</title>
-    <link rel="stylesheet" href="style1.css">
-    <style>
-        
-        /* Loading Animation */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007BFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="master_heading">AI for Content Writing</div>
-    <ol class="list_master">
+    <div class="master_heading">
+        <img src="http://www.doms.gov.mm/wp-content/uploads/2023/02/cropped-cropped-cropped-cropped-cropped-domslogo1-e1718787681432.png" alt="DOMS">
+        AI for Content Writing
+        <img src="http://www.doms.gov.mm/wp-content/uploads/2023/02/cropped-cropped-cropped-cropped-cropped-domslogo1-e1718787681432.png" alt="DOMS">
+    </div>
+    <ul class="list_master">
         <li>1. ChatGPT (OpenAI)</h3>
-        <p>AI-powered chatbot for generating, editing, and optimizing written content. <a class="tool-link" href="https://openai.com/chatgpt" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAaVBMVEX////8/Pzc3Nzf39/5+flxcXEAAACYmJgbGxvDw8Py8vLv7++ysrJXV1eAgICEhIRqamqfn59lZWVNTU0mJiaTk5PNzc26urpHR0dBQUHj4+PT09MLCwvr6+sSEhI5OTkuLi5gX2CmpqYaM6ryAAAA9ElEQVR4AbXON4KEMBAF0cJ9vPcwDu5/yBUEGtaF89KSupvPc1yPf/iBjPDvpihO0kx5Ucb8VEUYtdS06lKu0l4DjFIGJJMc3kZJOLNKSBdAPZarcBXu7Q69VDrUD6y5YTAxZ1RILGWDLoeuR/Sec5O3dwill413LWfUCrEKh6SVb6viIy45xrNXBo/SxuYJtcoNozsHZbIxVePgB+dY+amJ63WutIM3V23+OON4PdfdFQ2UGujOOFVYGo+pqmGRifdSd6zgBXjJ8SLnLmngLdHmALseA2Sqfa4WKd/Oq/BV8tNYlNNjTJJRL/5Uyij5j+vyeV+qoA1qsxSRqQAAAABJRU5ErkJggg==" alt="AI-powered chatbot for generating, editing, and optimizing written content."> <a class="tool-link" href="https://openai.com/chatgpt" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>2. Jasper AI</h3>
-        <p>AI tool for generating marketing copy, blogs, and creative content. <a class="tool-link" href="https://www.jasper.ai" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAJ1BMVEWRRv+RRf+MOf+IL/+YVf/cyP/s4f////+GKf/28f+vgP/Nsv/Bnf8jvSMjAAAAAXRSTlOWWYruFwAAANdJREFUeAGMzzELQVEYxnG+gfdQZDsQmK5bChODD2Bw7UjZpOvpYqHEzHAHE4rdgrIbfCnvOYDNf3n79U6Px0tf+Tz00z+Mmmb2w0ANaJXenIKrvyjacFz05ZMpdExzh8WDfms4IQodbUMzjBNxRaw1c85YMeQ2NIMjqSiuXU2LjyphK8bRezCPKjODJQkiyTww0/ytlGNNmmHDDGAgU8PjQuxRYvrhCHFeyYgLQ7GNwWQ+T+5hSyYZV9iXm4VRhBQp7YJzNq+BBTV/S5rK98EDh6SARYsUANn0SHe/CGYmAAAAAElFTkSuQmCC" alt="AI tool for generating marketing copy, blogs, and creative content."> <a class="tool-link" href="https://www.jasper.ai" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>3. Writesonic</h3>
-        <p>AI-powered tool for creating SEO-optimized content, ads, and product descriptions. <a class="tool-link" href="https://writesonic.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAACEklEQVR4AWJwL/ChK6afZaMWMgBIKWcou6IogKaO2riNbdu20cS22YZd3MQ22qSJbds2Zh7OvL3uOt+4b6bY656vu9/Rv5JbKuBegITmau4/fh9WKAXkuK0QWe+4H98MuBuSm846ayFfVlmR045Xp6XvNS4kYkuNgM213viX21yUS60uDrHJ8J5mVnms74aRQYWAsy2v/kcINkIBShNWBg0CHva8Lio8MONx8XRCZA1iy6kl4hKN9VJiPcmKGKaW+xURkmmmDBHO0XKW3eg6A8u4snGlSNvS5jJiLu9Xj9jIDmwVOXVSZHJ/8xn9U2HQw+3ZhMcT++f7XGYExFx67YLIs4dG9PO7OaFk8NnB5i/lVpdrCOVa+0tzMwpZWu0f08kFSFQGyyZxkqWREJMlDwJkp8LrHS5XSyukubG7R3aaje9zqoDsTDaUetYI/dz099WAGxFhYkJpF14HRnukGWmmlJjXxK+faxXMwKjwRofLlzMKdeF1YHQaW1cSb1RnIycjZMSgD8Hn2j8taeLAgPXCN9BT4+T1oPyIYoVDsgkjC09W+fmHoZwqZCashBDJxgLtNTv7YfjtiJA7sw4Na1F8j5MTRgjIEGmGDExWoSLHZKbs/i9xbPhuWPHBsOhFhJzJj4DsVKgLbyk86q/JJINE2ddR92OF2j87IV+WA+6H/Ajz9jDi8hNQ6TJ8W22jFgIALRm3nKbZZQUAAAAASUVORK5CYII=" alt="AI-powered tool for creating SEO-optimized content, ads, and product descriptions."> <a class="tool-link" href="https://writesonic.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>4. Copy.ai</h3>
-        <p>AI tool for generating copy for social media, emails, and websites. <a class="tool-link" href="https://www.copy.ai" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAUVBMVEVHcExpPuBpPuBpPt9pPuBpPuBpPuBpPuBpPuBpPuBpPuD///9eK99lOOBiMd9aIt7z8Pzn4vqQdefKvvOvne1/XeTd1veZgum9r/DY0PZzTOJhBM/fAAAACnRSTlMAwz0NVZ3P5yh36Z8ILAAAAPpJREFUKJF9UtcShCAQwwJIW4r9/v9D71hUijOXF2Y2GkI2hNwYKZc/cDqSFkIWEBU1yQZT5saWk3JsOQNaazAVe2kaG+bNn8eqS2U0KWF1KuE0+DPPPmFXD1z2nDRXVcBbHBLS42lR0x3LgeyOwj2h+GOIo80CaIifbWiKki4eeo6kvi6fQzLcJa/a/7hZ36+9nspJvnKBNqb/5F/Z1pD5qHO/DYn8lNOCARtFvE4RpdhxpNyyL5hGun66cq/jc/ZOPm0TQkF+zLNR1qzMS+QY7nMol70dIa1EDnW9qpo8FXuVr6pfiiKjq0vds0yx/tX5QVDGOaNieEZfzkEcBK9W0V0AAAAASUVORK5CYII=" alt="AI tool for generating copy for social media, emails, and websites."> <a class="tool-link" href="https://www.copy.ai" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>5. Rytr</h3>
-        <p>AI-powered writing assistant for generating content in various formats. <a class="tool-link" href="https://rytr.me" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAM1BMVEVHcEz/NAD/NAD/NAD/NQD/NQD/NQD/NQD/NAD/NAD/NQD/NAD/NQD/NQD/NQD/NQD/NQA3F3LEAAAAEXRSTlMAESEzPez/04IGxFOxmkdr4SkDuQwAAACgSURBVHgBjJAFDsQwDAQ3zPD/1159ctEqTBtYTRhfUNpYYxQkzm+EqM8u+RNZ30qiXGVtrdXAtl8k9037W+xQTGA0pXEjUWgTKfcYhCytDXUjM9/SymVRPOPkgdC8d8EzkHIgTc83kcu6v5MyIfiddJVo1LpIs5uQgDGK309Khi7c7+Sgde9kWWK4k5bynTSvMt0te8p2ATuqL/xGMBsAABO9CS+IMp6WAAAAAElFTkSuQmCC" alt="AI-powered writing assistant for generating content in various formats."> <a class="tool-link" href="https://rytr.me" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>6. Grammarly</h3>
-        <p>AI-based writing assistant for grammar, spelling, and style improvements. <a class="tool-link" href="https://www.grammarly.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
-
+        
+            <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAErklEQVR4Ab1XA9AjaRCd4MfZtm3bNsp1RvEuk6yVzNq2bdu2beu3/Ufv+i2mcpmJd/er6vBL92u97ihxnf5/p2W2qnNPmqb+avOoQ61u5xarpuZZ3Y4gha9tmrpBvhuY1tz5R6am3svfKCmfv/9OE6PPU7HVrdKgVwTRhXfULJtb7Zem/fMqdSRj2qJodW+2e9T2Vo9aeM5TJChBgra7HZ2U1o5bqDN+4/Rac6wVJX4RpCgBm9uxLq2F65l4QFjsmvqueL0/ktfpmhNXt6qP+zpreKVfZ7zavzMe7NIC18hn6ZorcjQ0dR91RwbBLwQlL5opuaJFXXwwtBd6rVuBHTmnUVJdhYraWlR4a1FaU419+bkYtGkNPh/Rj3dNgdAx1pQpCObJ5nGsDfdcChBP9myDcTs2i8EaBINBRDuVAmjqnu14sW9HSA0ZIiHFuY71Zah2FgvzFfqDNI8T344eiMOF+bphPtPzAwV5WHrkABYd2oeduVkokygEzt8RySovxQ9jB5uB8LO4/9cdbBdWbLjn34jx3IpyXWmevO6xdjlzj2tbN2CoKcw/nu3dHl1WL5X7ZbwLXyCAJgtnIk1zmqRDLWQqdJIREukXHvpHu7fC/vzcc8aD2Hz6BF7r34VFGLHi+d1zfTowMtiadRK3tm8SsSjJLbStkLVIHKEXLm9eB8O3rmdI6Q22Z5/G4z1awxZn693eoRle7tc5xn01j+yqkDrDGe7Ngd0kpzXgyassxzuDuxuVpS5em1C7wlCEfmGXwmu7YiHoPaXbmqXIMO/vlIVzReEQCf3wypb1sO7kUfBUeb3S+z35+UUSdavCSRb64c1tGyP/XOWfLi3BTfI+XoVP9WoL9+LZ0JbMNUhj6Yibw3TRthJe/Y91b63nf1v2SdJuXMavksjN3r8LEWiK3MH2NXSDEq7oAeF1UivP5qwTojg2AJLNz5NGkgWlbgIhosMBWfQlYceYABhyEg5PjrDZze1ip4D9T9ZzzZ2KOiHSdNEslIthnpLqajpnmgKEF+Hq40fOFWEt3hvcI+kie21AFzD0PLvzssmY4V2w0QCAbdh+5UKQ8yn9Nq5Oqg35m66rl+pkNnDjGsO4JgUYAFBe6NMRhVWV4OEseK53h8T6W0TIiySm5//Dob2MRCQkaAogs7kLfdev1NHPP7iXvB63cdI26Zu/pUzctdW4I2hqFseAEkkRN55dMmZ5/MEAQTASUYcRgb8rnm+RQUToPFllpZyUhurnAOQwUqJ58v6QnjhVVqKPY47anjKOPx7WG7e0a0KOoLBTWKyyEa1FcTVTBz19P5rsBKz+NM31qsITq78JYrusYIGQhaTK5wXZcrdEiFFiu7JjQpeWY8WFbE0uNYYl1a45OukLSTw5fbhbS/TdsIr8oAMxOzTMgmPOn+nVLsJK5lh3bk1XYgAw5pdKWyydi+VHD4FgyJgUvuYA67x6idRAj6hLqaKv5/EDMKTlipZ1cX2bhrink4Z7O2tkTxKYWbh1z0UO2N3/fqAbNwK4aOKXil+ncAcEdOOXAkCQf+u4AXMN1z2/BAC8bDPSLDffmH9OL4SnNMjthiuWTXP9ymUz3r/n/wFF+RYO2saSjgAAAABJRU5ErkJggg==" alt="AI-based writing assistant for grammar, spelling, and style improvements. "><a class="tool-link" href="https://www.grammarly.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
         <li>7. ProWritingAid</h3>
-        <p>AI-powered tool for improving writing style, grammar, and readability. <a class="tool-link" href="https://prowritingaid.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAP1BMVEVHcEwnMCv/yMkSJiD8xMX7w8b9xMX9w8X8xMX8xMX1v8CPdnQeLCYAGRDXqaq/mZjks7NfVVKriolLR0NzYl8qY6FgAAAACnRSTlMA////tBv/Grm1WUHdoAAAALZJREFUKJGl0skWgyAMBdAkKFiIMuj/f2vFoSUIi56+BeK5gUUIgJl0M4MBMG3KMfDq4wR90/pvJMqrvRcS6L2lu550cLZAcjOmi2nZ1CxRoVqXQ51ifCAyZ932XQORMZybFiLHdHybuN+MfbzzAyZU/CHFsURN1q/XYWYX6saTPa/OvaAa99773In4bbJ4MkqK18Kq94zzUphECl7UypNET7S6GQvNkT6rBxjFv0ge+c5YTyO8AQ87Ek26617vAAAAAElFTkSuQmCC" alt="AI-powered tool for improving writing style, grammar, and readability."> <a class="tool-link" href="https://prowritingaid.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>8. Wordtune</h3>
-        <p>AI-powered tool for rewriting and improving sentences. <a class="tool-link" href="https://www.wordtune.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAaVBMVEVHcEx3Qut8Suurj/Krl/J2QOp3Qut0POp6RuuHXO3NvfeYde+OZ+3///+miPGrkPF1P+r///90PepsLelwNeloJOlyOerg1/qpjvF8S+yLY+3Wyfjq4/z39P67pvTHt/adfvCTb+9fC+jkqHQCAAAAEHRSTlMA8WA/FsOH5jXnMofDP2Bg95h3fQAAAVJJREFUKJF9U+1ywyAMo2nzsa3bMAZCEghJ3/8hJ9P00nbX8id3FpJl4Sh1O11Tt1q3ddOp51MdjL6dQ/UAnT52SE572rHj8Ihpjt8vMc09bejpH6Z5onRVvutnmP0GxlawX79jdkqLvYI9V49E1xORNaXnxAelPoXomVHyC+WZFi9uaba6U1+o2jX2IOC+DRSg60g+jTob7UfKctNRdEGYRhNhhFpaOgqXfmIzUHaZRi/6ySEnNRobJsdxYgjMsMRomeEHVgTMrF2abQExAlomKhOJbHEQrMgWP34l4UP2LGOiDh8wFKUK7SxgXUYRv/CBXMS0BdFItdlCWAsYKF20t4lmISKEEh+YKzswaL6MiXpXFgLZ/ggVLkNPSWCiyCXu6vZkiI3gwg5TirMrWLs/tvWDA8GwY3t9om2NjghTm6d16F4vkb5b3ner+X6pX/wOf48BLT9Y8ApdAAAAAElFTkSuQmCC" alt="AI-powered tool for rewriting and improving sentences."> <a class="tool-link" href="https://www.wordtune.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>9. Simplified</h3>
-        <p>AI-powered tool for generating content, graphics, and videos. <a class="tool-link" href="https://simplified.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAKlBMVEUAAAAAAAD/rz//tUGpcyllRRnsoDpDLRDZlDUiFwi9gS5WOxWSYyRvTBsmJhwxAAAAAXRSTlPw/VsqegAAAHJJREFUKJHF0UESgCAIBVAFA9O6/3VDm9EQbevfPhkQnPuNX2c7JgReoRjEBRbDMMdqqrDjxBoer0UigmuCYgSlLQeDzU602AwM3t0ssieUFANI41c4S7gaHnZD5YUyjbpuwAuVacwy0seGnjks72myAx95CATm3VDPZQAAAABJRU5ErkJggg==" alt="AI-powered tool for generating content, graphics, and videos."> <a class="tool-link" href="https://simplified.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
 
         <li>10. Anyword</h3>
-        <p>AI tool for generating high-converting ad copy and content. <a class="tool-link" href="https://www.anyword.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
-    </ol>
-    <!-- Loading Animation -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAdVBMVEUMXO8AWe8AUu4ATe4AS+4AT+4AVu8AWu9VgfKxw/ji6fz6/P7////1+P7W4PuQqvZMe/Hc5fz4+/7m7P1iivPQ2/sOXu9wk/NDdvExbPB+nfQAVO4pafCsv/iYsPa9zPnr8f2kufc5cPCJpfUZYe/I1frBz/kr1SqjAAAA0klEQVR4Ac3RRQICMRAEwI3L9CDruPP/JzJHSHjA9rErnma5UdpYY50Pf8jGlAm8WrtK1WYLapm5RdeUqnowQcJMgymn2gGpH8dJJmNW5dR556Rze2JaH6pdgzpoZ49gOukSvY3ny7Datn/QTFcQEYhrdGcwI19uN6pQzWLX2Wp3R4VaJqCXQx4eVGMS3PhGuSsLmp83OpyJ28HZ54qY29d8/9bwhJRtB8qZuUXSP+vu0UpL7TNT26LcNb4Y1/T093S5vPe+eD5njdVB/lwitsh8ADrYDcwQysvYAAAAAElFTkSuQmCC" alt="AI tool for generating high-converting ad copy and content. "><a class="tool-link" href="https://www.anyword.com" target="_blank" onclick="showLoading()">Visit Website</a></p</li>
+    </ul>
+    
     <br/>
     <a href="index.html" class="back-link">← Back to Main Page</a>
-
-    <script>
-        // Function to show loading animation
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
-
-        // Hide loading animation when the page is fully loaded
-        window.addEventListener('load', function () {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    </script>
+    <div class="copy_right">
+        Constructed based on Dr.Nay Win Aung's advice
+        <br>
+        Created by <i style="font-weight: bolder;">"Aung Min Khant"</i>
+    </div>
 </body>
+
 </html>

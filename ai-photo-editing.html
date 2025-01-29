@@ -4,85 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI for Photo Editing</title>
-    <link rel="stylesheet" href="style1.css">
-    <style>
-        /* Loading Animation */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .loading-spinner {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007BFF;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="style2.css">
+    
 </head>
 <body>
-    <div class="master_heading">AI for Photo Editing</div>
-    <ol class="list_master">
+    <div class="master_heading">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA6lBMVEVHcEzvsw3mrA/ssQzQnhXotQ3VmiEAAALytAqUiDDvsgzssA3cuRnqqA/orhDytAzkqg7WnwzvchM0LiISw+wHxPTCTWDSOEXq9x3/+QAApsoIvvR1t48AsdoAwe/3twj+/gD/vgf6ugh+Xw/Ajg3prQq6ig3TnAumfA3r8gqyhA2IZg/3+AnJlQzb7wte7Qxy6A/I7gyY6w6edQ1+5BDQzwrJvwtiSg6Pag9I8QuUbw4o9Qi47A3cowwAx/7n9TWunhDAsQ2i4ZGfjRCo4xBCzdpz17bO7ViVhA7B6W2tYH382gkXxeyAirR1uFCtAAAAH3RSTlMA7YKxSpRiAv0j3813p73U9ePLDezR9vbd21zFrVCCnMcR8wAAAi5JREFUKJFNk4du2zAQhmlbcijbaYAEQbq5KWrvYdmWV5zV9v1fpyc3SUOAOOE+/sdxv9DF60DoxlrY9njqIPSee0PTGefMFczfjMZv+F9A1ogrv+uM6RrJOJ6i/xDZzDWtcIsigFlowj+dxef5iRitFWNKuYzJxjcunw10gDY3fsGIbMXTkwj0hjUuJ/MzRBYhCnNX7D1KQxrWgVacEDJGA8TwxfwnL4/p4+ng5eGuGCCBO6EFRC6PWZrR574/UC/N9oZBcgJwBFG18fKeeqc/py2l62V2hE0JvkDOIDRVmVJ66u/6HjYuyywYpFM0HcoH8Sqjh/7n3Y9vvx9pvFrvXMjayAZhtE/LjG6/3770ziOlcZrUGurO0YRzLus8gXL0dvr1C4QwTSsf4AxNdMFkncI9KHVeHg4QvLQEyOGVLiMxKOGwNPx8vXgAeJ+UlWZdcIXG2rjquM6Xg/TSfthSL8nzvWSNnCALC58FXpomIL3ebg80KZNQEHcjoa+kECzaZckKjkS87XO4Su5rn/kNhvebREKytorz0It/UVixzjxBcBeN4Pkc7guMRRWXy2S5XK2SPA42TAg1hZaiS6U7httdCJq1F4Z7oZgx0WxoGfQsEoKwSBzrqqp3QnO2ER107AwdLjtYzTZSawlGUVq52Hq1CXTGFYFUnA1DSd0UxELv7ruZk4ibJjKybYPGVyMHffDtYFxtcCACP8J4gdBHxwN2xnMwBb6yrff/4S/L+WAXFaXHggAAAABJRU5ErkJggg==" alt="DOMS">
+        AI for Photo Editing
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA6lBMVEVHcEzvsw3mrA/ssQzQnhXotQ3VmiEAAALytAqUiDDvsgzssA3cuRnqqA/orhDytAzkqg7WnwzvchM0LiISw+wHxPTCTWDSOEXq9x3/+QAApsoIvvR1t48AsdoAwe/3twj+/gD/vgf6ugh+Xw/Ajg3prQq6ig3TnAumfA3r8gqyhA2IZg/3+AnJlQzb7wte7Qxy6A/I7gyY6w6edQ1+5BDQzwrJvwtiSg6Pag9I8QuUbw4o9Qi47A3cowwAx/7n9TWunhDAsQ2i4ZGfjRCo4xBCzdpz17bO7ViVhA7B6W2tYH382gkXxeyAirR1uFCtAAAAH3RSTlMA7YKxSpRiAv0j3813p73U9ePLDezR9vbd21zFrVCCnMcR8wAAAi5JREFUKJFNk4du2zAQhmlbcijbaYAEQbq5KWrvYdmWV5zV9v1fpyc3SUOAOOE+/sdxv9DF60DoxlrY9njqIPSee0PTGefMFczfjMZv+F9A1ogrv+uM6RrJOJ6i/xDZzDWtcIsigFlowj+dxef5iRitFWNKuYzJxjcunw10gDY3fsGIbMXTkwj0hjUuJ/MzRBYhCnNX7D1KQxrWgVacEDJGA8TwxfwnL4/p4+ng5eGuGCCBO6EFRC6PWZrR574/UC/N9oZBcgJwBFG18fKeeqc/py2l62V2hE0JvkDOIDRVmVJ66u/6HjYuyywYpFM0HcoH8Sqjh/7n3Y9vvx9pvFrvXMjayAZhtE/LjG6/3770ziOlcZrUGurO0YRzLus8gXL0dvr1C4QwTSsf4AxNdMFkncI9KHVeHg4QvLQEyOGVLiMxKOGwNPx8vXgAeJ+UlWZdcIXG2rjquM6Xg/TSfthSL8nzvWSNnCALC58FXpomIL3ebg80KZNQEHcjoa+kECzaZckKjkS87XO4Su5rn/kNhvebREKytorz0It/UVixzjxBcBeN4Pkc7guMRRWXy2S5XK2SPA42TAg1hZaiS6U7httdCJq1F4Z7oZgx0WxoGfQsEoKwSBzrqqp3QnO2ER107AwdLjtYzTZSawlGUVq52Hq1CXTGFYFUnA1DSd0UxELv7ruZk4ibJjKybYPGVyMHffDtYFxtcCACP8J4gdBHxwN2xnMwBb6yrff/4S/L+WAXFaXHggAAAABJRU5ErkJggg==" alt="DOMS">
+    </div>
+    <ul class="list_master">
         <li>1. Adobe Photoshop (AI Features)
-        <p>AI-powered tools like Neural Filters and Content-Aware Fill for advanced photo editing. <a class="tool-link" href="https://www.adobe.com/products/photoshop.html" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAY1BMVEX////+9fX+9/b96+vpAAD4xsXyjYrqEADqAADuVlL2s7HyhoPsNS/61tb2rq3wbGjrIxzrLyn1pqTzmJb60tHvZmP3vLv4wcDzk5HtRkL73t3xeXb97ezsQTzuWlb62djqGQ+7TL0FAAAAwElEQVR4AbWQVQLDMAxDF06GZab7n3KxyvBblWy9gNLH/WLci10zISF1CbU0XtZdQmkgKS7Yc4avC/i2ZqJn9pFmht8T/NHEd0CRwiNjNFFGMT7JAY4uE/Sx6QHayXQWg3Ysm5fLURQ7WFpvBfMSxm5ZNcahskCZbWANh1PZIFK7Mg5Wj02HSNUCI8Bv//l4T00jZw2GJEm+GxsOgrGzZD7/jwgIB59l0ymSGeZzbMV8JBQZoPj0qz4eNmRQtpv0B4L4C2q5kuOCAAAAAElFTkSuQmCC" alt="AI-powered tools like Neural Filters and Content-Aware Fill for advanced photo editing."> <a class="tool-link" href="https://www.adobe.com/products/photoshop.html" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
-        <li>2. Luminar AI
-        <p>AI-driven photo editing software for enhancing and retouching photos. <a class="tool-link" href="https://skylum.com/luminar-ai" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <li>2. Skylum AI
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAaVBMVEVHcEwhW7IhW7IhW7IhW7IhW7IeVrUhW7IhW7IfWrIgW7IhW7IhW7IAT7gATrgAT7j/2Tv31UP300b20kf20kf20kf20kf20kf20kf20kf20kf20kf20kf10kb20kf20kf20kf20kf20keV0uhpAAAAI3RSTlMATZrK8f8NSYOxGzBg/v///w617f+lS8oeWpL2YDE1gmNk6cJ1Ft4AAAEjSURBVHgBZNAFDkQhDATQQab42v3vukbaNJ8XQ2twQkyZzCkGnCCRTsGVXW8JFZ5kXqBlgek8jEl2+8/THCQFW+apdpIZf7XN0aWPGTNN/YeN2Mastc4BjOYj7CQoiSpNSLMaNAS9AgTt4k/3WxYbik4uIPp7aytpaxGJRu8hWgLt5Y5mCrSdjHXb7g2O3O/7eOGhnnBenzbn4oBhGAgC4LZw1oopcf89BgTmeUnHWxiKnYbBxnBSsOyc5zZDuLEIbCIsI4bITZjTNEjGNkMidwZgk/L8Gx4B0Pwric0i8JaTNdtFrnLQDsivWmvKaPqZUrmJOhUnrryXimbdJlxEdLLdcCEYHPnOvHHYSFzAi1VwFGB5EnBleKAFD0ywilQ2GOy+zKsmC0woSt8AAAAASUVORK5CYII=" alt="AI-driven photo editing software for enhancing and retouching photos."> <a class="tool-link" href="https://skylum.com/luminar-ai" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>3. Canva AI
-        <p>AI tools for graphic design, image editing, and template creation. <a class="tool-link" href="https://www.canva.com/ai-tools" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3NTc3NzA3NzIvNzY1NzcrNzc3Nzc3Nzg1Nf/AABEIABwAHAMBEQACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAACBAUGA//EACgQAAEDAwMCBgMAAAAAAAAAAAECAwQABREhMUESEyIyYZGhsQZygf/EABkBAAMBAQEAAAAAAAAAAAAAAAMEBQIHAP/EACQRAAICAgEEAgMBAAAAAAAAAAECAAMEEUESEyFRIjEjceEF/9oADAMBAAIRAxEAPwBmr05jKLNoeXDEyQ6zFjq8i31Edf6gAk0I2jq6QNmPV4FjV91yFXjfP6HkxW629639lTqm3Gn0dbTrSspWOfui1OH3riFbEekrsgg+QR9GSFr8VOKPEpVV/GV7SwmZdIkVflddSlWvGdfikrdohb1JGLjd29EP0THvzWcXL68xkBqMEtNoGgSMAn5P1WcOr8Qb3KX+mGtyivC6Aki6Xdc2PDjlCW2ojXQhIOck46lH1OKbqxugk8mHVWtCKRoKNCRlu+KnVTxK1WN8Y3FuioM1iU3grZcSsAnfB2/tZOL3FKnmTaMRkcOOJoL+3bL9LN1tt6t8bvpBfjzne0tCgMaDBztx7nNJ44ux17VlZOvogbEp2Yi2P3BzM1dpUJtDUS3q7yGiouSSjpLyzjYHUJGNAfU81QppsJL2DW+PX9jlOGPElFwk5pnpAlNaVA1OK3FE706qCKpSgghRPNeIAh1rUQxQTDCFQjNz/9k=" alt="AI tools for graphic design, image editing, and template creation."> <a class="tool-link" href="https://www.canva.com/ai-tools" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>4. Fotor
-        <p>AI-powered photo editor for retouching, enhancing, and transforming images. <a class="tool-link" href="https://www.fotor.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAolBMVEVHcEzhoGTw8RLl5wrt7Q/882H63Bz/zE3/zEz/zE7x7jz/yUD/y0r/zE/90yz/ykaI2hDK5Av/uTP+eyuU3AX/giH/xjj/njEAs3UAuG0AaeSbAMfJEqDcFY7jIYUMk8wQaP8gQv5xAOWSAMyxCLgHpZwpUP6HAN0QeP+iAMMUg/8VlfisAL4UjP9+AO0Wlf84ZP4zW/4Ymv+yALsYm/+IAPF2DtyZAAAANXRSTlMAIpf9/////+ag+P//jfj///f3//3+//j+//L++f//+P3//v3x+P74///+7P/////+/5eXItZSS84AAAF9SURBVHgBXM2FEcAwDARBhZnJ/Vcq+MiB87B23iQlaZYXXulVdZOQleZS+wdd31fVgLv1A2MvmUhylH1BN00mEkodtG8wThNEQxnOmIhg6m5Rkw/4BAa6zoj8QfPiABO4SwqqdaN53jPcMfEG67EpMBKF3k9JxLVtANKSWQDxHAEIJjDQrTgDoF2JArnr518AohM6gPU/wD9F6WcHuzXLwz/r8Y0CdzUW2AGDUBCkp6gkOMXidv+r9S9SmwTdectv3t8+hpH/QnD2/huptLGuRaJQhbcyfyrltQnWjgL5L6FKUSmltTHW2jRSxLtAL9MkVVTRQwjDMFj3r0FGoDQEYwcw/hI+c8wQvPYQTBqGlIY09iemTKDAkwHBJjAnxyHIZVmq4cG6rmZNQzFmKmHbtjRj9wD5GmrDTLDp2/CHPyAAiiuOnVsx8rIfBxlHFcLclIvdWzMOAOHB3xteGCoIKtgP8FTC3ApYM/IOyHoaQ8vBfU7b3nk6s7uon30BtXRepYcnJc8AAAAASUVORK5CYII=" alt="AI-powered photo editor for retouching, enhancing, and transforming images."> <a class="tool-link" href="https://www.fotor.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>5. Remove.bg
-        <p>AI tool for removing backgrounds from images effortlessly. <a class="tool-link" href="https://www.remove.bg" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAASFBMVEX/xQD/yAD/zADVpiBlWUBnWj8wOUhAQkbSpCFFRUViV0DPoiLaqh0YLEo3PUeriS84PUf6wQq/lyiwjC48P0a0jyyohzCkhDHqnqURAAAAj0lEQVR4AdXQRQKAQAgFUHW6GfP+NxW7a+lf8iaA5L9Jsyy9JEIpGflAjAvB2YGRJOVCYQSncuGB9EAD6xWnZqKFzaipdV7t4p2dNAkAawIIWBwx5rEoYaaywMLyLIcQK+SeqhiAL89iQ94jCwCB5P3Q0DIKch2rKtYdHSalyE2DRBdarw95WN+nxQ+M9Nu0a3MIvciLu70AAAAASUVORK5CYII=" alt="AI tool for removing backgrounds from images effortlessly."> <a class="tool-link" href="https://www.remove.bg" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>6. DeepArt.io
-        <p>AI-powered tool for transforming photos into artistic masterpieces. <a class="tool-link" href="https://deepart.io" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAATlBMVEVHcExmO7pmO7pmO7pmO7pbJ7Z8WcPb0+7////QztcBADwcAEsVAEcuGlU0H1tENWS1sb+hnK/08/bX1d0oEFFjWXtfN64vG1UvG1UvG1XhakCNAAAAGnRSTlMAVs//qv///////////////////////9BXqwOSPCYAAADHSURBVHgBddMFbgRBDERRD7vbMBy4/0XjJOvVNH3JoqcSGwC6fqjUd2CNQ6PRdkOzDvo29tAky3FKSnFekuYnTgsmhSnFSO8iBkqR5R1jYC1xXR1Fc6RtY0fTBFkQhR1NH7huaIXVUfSBuh+Ix66Gp6H1QKF4HEzXRWGnAoX2ja41RDYrUFSv+8RdpYIWbYjnfWUY+S/i+4hmKb46+fKd4zCH87+NxM3RtvwfOTxx+JAy6Nv6Cd1QqL7uC2DM1fsGf4dCP233A5RQGRx+obuHAAAAAElFTkSuQmCC" alt="AI-powered tool for transforming photos into artistic masterpieces."> <a class="tool-link" href="https://deepart.io" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>7. Let's Enhance
-        <p>AI tool for upscaling and enhancing image quality. <a class="tool-link" href="https://letsenhance.io" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,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" alt="AI tool for upscaling and enhancing image quality."> <a class="tool-link" href="https://letsenhance.io" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>8. Pixlr
-        <p>AI-powered photo editor with advanced editing tools and filters. <a class="tool-link" href="https://pixlr.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA9lBMVEUmJiYnJycoKCgpKSkqKionJyUoIBwnFQosPEQlGwwnJCEnEwYxaXo8q8xFu+ZLtOVRrORPkcY1SF4kHxQ6o8E/wuhBuuFGsd5Lq9xRpNxXnt1gneQ/VXgjIxo+u99YmtpgkdlnkuEqLDQzZH5Cb5ZNXpQkLTImHRYhEwBTf7lpiNlhcrwgHQwtS1QuW29KaJhsgtZpdsciGwAzdopYebg2iKFCk7w1QFVyf9pWV5c7j65Agak8Tmx5fd8sKzskAABGoc1hY61PToc6X39OfrRAT3Y+Qmd7c9djWaWDa9h5YsQbIg2LZdo6M06RXtlINGN+VbxdOYDIX6LNAAABZklEQVR4AW3Rg7LDQBQG4J7dMqoZp7ZtW+//Mjeezs7943zr9bgBhL0YYwTgIQNePdgOwdgx5EP6DZHVDPMHvEFviEK6koZohuXCkWgs/qOO+RPJVDqTzfGC6KrTH51ISnrFrKyomg8h+B2nn0lKqXQ+WOAVtSjaM8KW4YCkW6lMVapqrd4AMNU2qqk32iojFG+rnW7PQmQZ9veTXLqCEOoNap2uXRNbhstDLj3SMT5WO5OpCKbq/yHgp3B5ls7MQ1RvodY6y5XPQV+T7Tfp9SwTmVNC1bBpA+w+jaGkuPRGn32OV3SbbG2zkEtnMpFsTpZN27mmIwQ3BuVks95Uc0wPYAwhKrYvHBRFPa4acZ9reszdpyh9CrXaSjTFNb1dZMSn6d2dKMdctdLoTJY7kTAP2Nhdni8N28iq4uV8vd1tIxTE3fX6oHykGQrgez4er7dIkh7QUfx8Pl8SXb7f75bBf07+/ANHKSe0X7iXSAAAAABJRU5ErkJggg==" alt="AI-powered photo editor with advanced editing tools and filters."> <a class="tool-link" href="https://pixlr.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>9. Prisma
-        <p>AI-powered app for transforming photos into art using various styles. <a class="tool-link" href="https://prisma-ai.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+        <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAeFBMVEVHcEz////////////////////////8/f7////6+/z///////////////////////////////////8LNEv///8AGzoALkcAJUAAACvr7vCQnqfGztPU2t43U2YeQlhvgY2wusB/jpm8xcrf5OdVa3qhrbRhdIJKYnKCsJGcAAAAE3RSTlMAIRCM2spB/KL1BTK0uXZSaF1/CRIjzgAAATVJREFUKJF10tm2gjAMBVARsIA43abpRKGAwP//4W2ZRMW87sUhTXI4bCqIIT4eflRqjY5+WNgyjnDatQCeiMzGuxg3DPuhhPOOPQhF3hSiyb8tIzWnrAVjIPjCpGCUIkAjdPJpZzBIcQCAcoDPt0ad+5Arh1YU4btdJVJKWeMQaA/Z1o5QcY/SYyfavy1etAulWHoDwiuysROUPhWfI4IS8v7CVPnQqR9XktXpaqH0oe6XekKombzN5gc+IpczSqGWzSV6+nDux1eFZN5cYmesVmxFFy+9mjGWdytCT5fNjTPf9OOqEDZftjU+haevWMXqpaWbHwKaCYiuS8Gecp3+xQWP/UjbM4FVk8JrqX7wXLXKCGFUAWnydoJ3f0AuzEqIrl9nEhdDrQnJH3sXn+UQhZ9H+Q9B9iK1sFtnKwAAAABJRU5ErkJggg==" alt="AI-powered app for transforming photos into art using various styles."> <a class="tool-link" href="https://prisma-ai.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
 
         <li>10. FaceApp
-        <p>AI-powered app for editing and enhancing facial features in photos. <a class="tool-link" href="https://www.faceapp.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
-    </ol>
-    <!-- Loading Animation -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-    </div>
+        <p><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3NzcwNzc3Nzc3Nzc3Nzc3NzcyNf/AABEIABwAHAMBEQACEQEDEQH/xAAYAAADAQEAAAAAAAAAAAAAAAAABgcFA//EACYQAAIBAwMEAQUAAAAAAAAAAAECAwAEEQUGEhMhMWFRFCJx0fD/xAAaAQADAQEBAQAAAAAAAAAAAAAABAUGAgMB/8QAKREAAQQBAgQFBQAAAAAAAAAAAQACAwQRBSFBcYGxEzFRYaESweHw8f/aAAwDAQACEQMRAD8AuDMqKWYhVAySTgAUAZQlDVd+W9ncPHa2TXKI3EyGXgD+OxzTrqTmQ+I49F60IxctCuDjOd+QWvt7cllrqMLfnFOgy0MmOWPkY8ikcjOE3e02amR9e4PELZr6p6wt7GRds3nTz3Ch+PnjyGad08A2W5S1txbCSPbupYl9yUQ6jZrMAABLFJ05FA8AnBVsDA7jPuqOqhsdZz2nbbbr8KhoGXXGFuPqwfPl0THtq0+n1SxvLORnhkkCgsvFhnsysMnBAPyQcgisXJZLZWY8icfZaq/P4kD45BggfkEH0/iptVljlwvrVL20ltpSwSVeJKnuK7jkMbw8cFxIwSMLTxUz1LQJrPUehIhKlvsfHZx6/VO6rZbLpzi327hc6IX19Qa13oeyc9uaO9rBG068cOZAp8g4wP70KzVao5xa+Tgc/GP3orN+4JHEN5JgqqpaKEIoQihCKEL/2Q==" alt="AI-powered app for editing and enhancing facial features in photos."> <a class="tool-link" href="https://www.faceapp.com" target="_blank" onclick="showLoading()">Visit Website</a></p></li>
+    </ul>
     <br/>
-    
-
-    <script>
-        // Function to show loading animation
-        function showLoading() {
-            document.getElementById('loadingOverlay').style.display = 'flex';
-        }
-
-        // Hide loading animation when the page is fully loaded
-        window.addEventListener('load', function () {
-            document.getElementById('loadingOverlay').style.display = 'none';
-        });
-    </script>
+    <a href="index.html" class="back-link" style="margin-top: 10px;">← Back to Main Page</a>
+    <div class="copy_right">
+        Constructed based on Dr.Nay Win Aung's advice
+        <br>
+        Created by <i style="font-weight: bolder;">"Aung Min Khant"</i>
+    </div>
 </body>
 </html>
