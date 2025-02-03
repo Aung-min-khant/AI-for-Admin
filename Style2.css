@@ -108,6 +108,7 @@ ul li img{
     background-color:#fff ;
 }
 .copy_right{
+    display:none;
     position: fixed;
     bottom:10px;
     color:#a09898;
